@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="El marketplace de UGC: mirá videos de creadores de cualquier rubro y pedí uno para tu marca. Gratis.">
+<link rel="icon" href="icon.svg"><title>Clip Market · Tu próximo trabajo empieza con un clip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <a class="brand" href="#"><img src="icon.svg" alt=""><span>Clip Market</span></a>
+  <nav aria-label="Principal">
+    <button data-view="orders">Encargos</button>
+    <button data-view="account" id="account">Entrar</button>
+    <button class="primary" data-view="upload">Subir mi video</button>
+  </nav>
+</header>
+<main>
+  <section class="top">
+    <h1>Tu próximo trabajo empieza con un <em>clip.</em></h1>
+    <p>Creadores: subí un video y que te encuentren. Marcas: mirá cómo trabajan y pedí el tuyo. Gratis.</p>
+    <form class="search" id="searchform" role="search">
+      <label><span>Rubro</span>
+        <select id="category" aria-label="Rubro"></select>
+      </label>
+      <label class="grow"><span>Buscar</span>
+        <input id="search" type="search" placeholder="Producto, creador o ciudad" autocomplete="off">
+      </label>
+      <button class="go" aria-label="Buscar"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+    </form>
+    <div class="filters">
+      <select id="price" aria-label="Precio">
+        <option value="">Cualquier precio</option>
+        <option value="30000">Hasta $ 30.000</option>
+        <option value="60000">Hasta $ 60.000</option>
+        <option value="120000">Hasta $ 120.000</option>
+      </select>
+      <select id="sort" aria-label="Orden">
+        <option value="new">Más nuevos</option>
+        <option value="cheap">Menor precio</option>
+      </select>
+      <button type="button" class="clear" id="clear" hidden>Limpiar filtros</button>
+    </div>
+  </section>
+
+  <section id="explorar" aria-label="Videos">
+    <h2 id="gridtitle">Videos</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="how" aria-label="Cómo funciona">
+    <article><b>1</b><h3>Mirá videos</h3><p>Sin cuenta. Lo que ves es cómo trabaja cada creador.</p></article>
+    <article><b>2</b><h3>Pedí el tuyo</h3><p>Contás qué necesitás, cuánto pagás y para cuándo.</p></article>
+    <article><b>3</b><h3>Recibilo</h3><p>El creador acepta, graba y te entrega el video.</p></article>
+  </section>
+  <footer><span>Clip Market · Gratis, sin comisión. El pago lo acuerdan marca y creador.</span></footer>
+</main>
+<dialog aria-labelledby="dialog-title"><button class="close" aria-label="Cerrar">×</button><div id="panel"></div></dialog>
+</body></html>
